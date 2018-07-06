@@ -13,7 +13,7 @@ describe('Funky functions', () => {
   // intersection
   // Creates an array of unique values that are included in the two given arrays.
   // Based on: https://lodash.com/docs/4.17.5#intersection
-  xdescribe('intersection', () => {
+  describe('intersection', () => {
     it('returns an array', () => {
       expect(intersection([], [])).to.be.an('array')
     })
@@ -66,7 +66,7 @@ describe('Funky functions', () => {
     })
   }) // end: intersection
 
-  xdescribe('flattenDeep', () => {
+  describe('flattenDeep', () => {
     // flattenDeep
     // recursively flattens array
     // Based on: https://lodash.com/docs/4.17.5#flattenDeep
@@ -90,7 +90,7 @@ describe('Funky functions', () => {
     })
   }) // end: flattenDeep
 
-  xdescribe('flipArguments', () => {
+  describe('flipArguments', () => {
     // flipArguments
     // Creates a function that invokes the input func with arguments reversed
     // Based on: https://lodash.com/docs/4.17.5#flip
@@ -116,7 +116,7 @@ describe('Funky functions', () => {
     })
   }) // end: flipArguments
 
-  xdescribe('invert', () => {
+  describe('invert', () => {
     // invert
     // Creates an object composed of the inverted keys and values of object.
     // If the input object contains duplicate values, subsequent values overwrite previous values
@@ -153,7 +153,7 @@ describe('Funky functions', () => {
     })
   }) // end: invert
 
-  xdescribe('camelCase', () => {
+  describe('camelCase', () => {
     // camelCase
     // converts input string to camelCase
     // Based on: https://lodash.com/docs/4.17.5#camelCase
