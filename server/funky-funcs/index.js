@@ -1,8 +1,13 @@
-const intersection = (arr1, arr2) => {
-  const arrIntersec = arr1.filter(elem => {
-    return arr2.includes(elem)
+const intersection = (...args) => {
+  const flatArr = flattenDeep(args)
+
+  const arrIntersec = flatArr.filter((elem,i) => {
+    return flatArr.slice(i+1,flatArr.length).includes(elem)
   })
-  return arrIntersec
+  return arrIntersec.filter((elem, i, self) => {
+    return self.indexOf(elem) === i
+  })
+
 }
 
 const flattenDeep = (arr) => {
