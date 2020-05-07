@@ -4,7 +4,7 @@ const { expect } = require('chai');
 const { db, Coffee } = require('../server/models');
 
 describe('Coffee model', () => {
-  beforeEach(() => db.sync({ force: true }));
+  // beforeEach(() => db.sync({ force: true }));
 
   describe('column definitions and validations', () => {
     it('has a `name` and `ingredients`', async () => {

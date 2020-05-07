@@ -29,11 +29,11 @@ Coffee.findByIngredient = async function (ingredient) {
 };
 
 Coffee.beforeValidate(element => {
-  //if(element.ingredients) {
+  if (element.ingredients) {
     if (!element.ingredients.includes('love')) element.ingredients.push('love');
-  // } else {
-  //   element.ingredients = ["love"]
-  // }
+  } else {
+    element.ingredients = ['love'];
+  }
 });
 
 module.exports = Coffee;
