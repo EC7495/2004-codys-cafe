@@ -19,7 +19,7 @@ describe('Routes', () => {
   })
 
   describe('/coffee', () => {
-    describe('GET /coffee', () => {
+    xdescribe('GET /coffee', () => {
       it('sends all coffee', () => {
         return agent
           .get('/api/coffee')
@@ -32,7 +32,7 @@ describe('Routes', () => {
       })
     })
 
-    describe('GET /coffee/ingredients/:ingredientName', () => {
+    xdescribe('GET /coffee/ingredients/:ingredientName', () => {
       // Be careful about the order in which you register your routes!
       // Don't forget that Express evaluates them in the order in which they're defined!
       // Arf!
@@ -84,7 +84,7 @@ describe('Routes', () => {
       })
     })
 
-    describe('GET /coffee/:coffeeId', () => {
+    xdescribe('GET /coffee/:coffeeId', () => {
       it('gets the coffee with the specified id', async () => {
         await agent
           .get(`/api/coffee/${puppaccino.id}`)
@@ -110,7 +110,7 @@ describe('Routes', () => {
       })
     })
 
-    describe('POST /coffee', () => {
+    xdescribe('POST /coffee', () => {
       it('creates a new coffee and sends back the new coffee', async () => {
         await agent
           .post('/api/coffee')

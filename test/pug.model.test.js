@@ -3,10 +3,10 @@
 const {expect} = require('chai')
 const {db, Pug, Coffee} = require('../server/models')
 
-describe('Pug model', () => {
+xdescribe('Pug model', () => {
   beforeEach(() => db.sync({force: true}))
 
-  describe('column definitions and validations', () => {
+  xdescribe('column definitions and validations', () => {
     it('has a `name`, `age`, and `biography`', async () => {
       const pug = await Pug.create({
         name: 'Cody',
@@ -72,7 +72,7 @@ describe('Pug model', () => {
     })
   })
 
-  describe('instance method: isPuppy', () => {
+  xdescribe('instance method: isPuppy', () => {
     it('returns true if a pug is a puppy (less than one year old)', async () => {
       const pup = await Pug.create({name: 'Pupster', age: 0})
       const notPup = await Pug.create({name: 'Grouchy', age: 2})
@@ -82,7 +82,7 @@ describe('Pug model', () => {
     })
   })
 
-  describe('instance method: shortBio', () => {
+  xdescribe('instance method: shortBio', () => {
     // Note: the first sentence might be defined as all of the text
     // leading up to but not including the first period,
     // question mark, or exclamation point.
@@ -109,7 +109,7 @@ describe('Pug model', () => {
   })
 
   // Check out: http://docs.sequelizejs.com/manual/tutorial/querying.html#relations-associations
-  describe('class method: `findByCoffee`', () => {
+  xdescribe('class method: `findByCoffee`', () => {
     it('finds all pugs with the given favorite coffee', async () => {
       const latte = await Coffee.create({name: 'latte'})
       const cortado = await Coffee.create({name: 'cortado'})
@@ -141,7 +141,7 @@ describe('Pug model', () => {
     })
   })
 
-  describe('hooks', () => {
+  xdescribe('hooks', () => {
     it('capitalizes a pug\'s name before saving it to the database', async () => {
       const pug = await Pug.create({name: 'joe'})
 

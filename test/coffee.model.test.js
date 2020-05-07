@@ -3,10 +3,10 @@
 const {expect} = require('chai')
 const {db, Coffee} = require('../server/models')
 
-describe('Coffee model', () => {
+xdescribe('Coffee model', () => {
   beforeEach(() => db.sync({force: true}))
 
-  describe('column definitions and validations', () => {
+  xdescribe('column definitions and validations', () => {
     it('has a `name` and `ingredients`', async () => {
       const puppaccino = await Coffee.create({
         name: 'Puppaccino',
@@ -31,7 +31,7 @@ describe('Coffee model', () => {
     })
   })
 
-  describe('instance method: getIngredients', () => {
+  xdescribe('instance method: getIngredients', () => {
     it('returns list of ingredients as a comma-delimited string', async () => {
       const puppaccino = await Coffee.create({
         name: 'Puppaccino',
@@ -58,7 +58,7 @@ describe('Coffee model', () => {
   //     [Op.contains]: ['thing']
   //   }
   // }
-  describe('class method: findByIngredient', () => {
+  xdescribe('class method: findByIngredient', () => {
     it('finds coffee by ingredient', async () => {
       await Promise.all([
         Coffee.create({
@@ -86,7 +86,7 @@ describe('Coffee model', () => {
     })
   })
 
-  describe('hooks', () => {
+  xdescribe('hooks', () => {
     // because EVERYTHING in Cody's Cafe is made with love ♥
     it('adds "love" to ingredients if not included', async () => {
       const coffee = await Coffee.create({
