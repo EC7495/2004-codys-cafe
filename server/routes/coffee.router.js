@@ -46,4 +46,21 @@ router.get("/:coffeeId", async (req, res, next) => {
   }
 })
 
+router.post("/", async (req, res, next) => {
+  try {
+    //console.log("req.body", req.body)
+    const newCoffee = {
+      name: req.body.name,
+      ingredients: req.body.ingredients || []
+    }
+
+    let coffee = await Coffee.create(newCoffee)
+    //console.log("!!!", coffee)
+    res.status(201).send(coffee)
+
+  } catch (error) {
+    next(error)
+  }
+})
+
 module.exports = router
